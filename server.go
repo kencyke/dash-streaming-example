@@ -4,23 +4,21 @@ import (
 	"flag"
 	"log"
 	"net/http"
-	"os"
-	"path/filepath"
 	"strconv"
 )
 
 func main() {
 	const defaultPort = 8081
-	var port int
-	flag.IntVar(&port, "port", defaultPort, "TCP port to listen")
+	var p int
+	flag.IntVar(&p, "p", defaultPort, "TCP port to listen")
+
+	const defaultDir = "./"
+	var d string
+	flag.StringVar(&d, "d", defaultDir, "Directory to serve")
+
 	flag.Parse()
 
-	pwd, err := filepath.Abs(filepath.Dir(os.Args[0]))
-	if err != nil {
-		log.Fatal(err)
-	}
-
-	log.Printf("Serving HTTP on %d at %s", port, pwd)
-	p := strconv.Itoa(port)
-	log.Fatal(http.ListenAndServe(":"+p, http.FileServer(http.Dir(pwd))))
+	log.Printf("HTTP serves %s on %d", d, p)
+	port := strconv.Itoa(p)
+	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir(d))))
 }
