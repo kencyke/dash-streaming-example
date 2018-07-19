@@ -6,11 +6,13 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"strconv"
 )
 
 func main() {
-	var port string
-	flag.StringVar(&port, "port", "8081", `TCP address to listen on, ":8081" if empty`)
+	const defaultPort = 8081
+	var port int
+	flag.IntVar(&port, "port", defaultPort, "TCP port to listen")
 	flag.Parse()
 
 	pwd, err := filepath.Abs(filepath.Dir(os.Args[0]))
@@ -18,6 +20,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Printf("Serving HTTP on %s at %s", port, pwd)
-	log.Fatal(http.ListenAndServe(":"+port, http.FileServer(http.Dir(pwd))))
+	log.Printf("Serving HTTP on %d at %s", port, pwd)
+	p := strconv.Itoa(port)
+	log.Fatal(http.ListenAndServe(":"+p, http.FileServer(http.Dir(pwd))))
 }
