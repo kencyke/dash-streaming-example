@@ -33,10 +33,17 @@ docker run -it --rm -v `pwd`/server/data:/tmp -w /tmp mp4box:0.1 \
         -out ./${output}.mp4 \
         ./${encoded}.mp4
 ```
+### npm
+
+```bash
+npm init -y
+npm install --save-dev typescript ts-loader webpack webpack-cli
+npx webpack --display-error-details
+```
 
 ## Usage
 
 ```bash
 make build
-./bin/server
+./bin/server // go to http://localhost:8000
 ```
