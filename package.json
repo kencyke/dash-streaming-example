@@ -1,0 +1,26 @@
+{
+  "name": "http-streaming-examples",
+  "version": "1.0.0",
+  "description": "## Preprocessing",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kencyke/http-streaming-examples.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kencyke/http-streaming-examples/issues"
+  },
+  "homepage": "https://github.com/kencyke/http-streaming-examples#readme",
+  "devDependencies": {
+    "ts-loader": "^4.4.2",
+    "typescript": "^3.0.1",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0"
+  }
+}
