@@ -1,4 +1,4 @@
-# http-streaming-examples
+# dash-streaming-example
 
 ## Preprocessing
 
