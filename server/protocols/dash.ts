@@ -11,7 +11,7 @@ export class Dash {
     this.getDescription(url, () => this.initVideo(id))
   }
 
-  getDescription(url: string, cb: () => void) {
+  getDescription(url: string, call: () => void) {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     xhr.responseType = "document";
@@ -23,7 +23,7 @@ export class Dash {
       const codecs = representation.getAttribute("codecs");
       this.type = `${mimeType}; codecs="${codecs}"`
       this.mpd = mpd;
-      cb();
+      call();
     };
     xhr.send(null);
   }
