@@ -1,26 +1,16 @@
 {
-  "name": "http-streaming-examples",
-  "version": "1.0.0",
-  "description": "## Preprocessing",
-  "main": "index.js",
+  "name": "dash-streaming-example",
+  "version": "0.0.1",
+  "description": "MPEG-DASH media streaming example in Typescript",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kencyke/http-streaming-examples.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kencyke/http-streaming-examples/issues"
-  },
-  "homepage": "https://github.com/kencyke/http-streaming-examples#readme",
+  "author": "kencyke",
+  "license": "MIT",
   "devDependencies": {
-    "ts-loader": "^4.4.2",
-    "typescript": "^3.0.1",
-    "webpack": "^4.16.4",
-    "webpack-cli": "^3.1.0"
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }
